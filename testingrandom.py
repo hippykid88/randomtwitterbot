@@ -1,12 +1,9 @@
-import random
+#!/usr/local/bin/python3.6
+import random, config
 from  twython import Twython
 
-CONSUMER_KEY = 'PLACE KEY HERE'
-CONSUMER_SECRET = 'PLACE KEY HERE'
-ACCESS_KEY = 'PLACE KEY HERE'
-ACCESS_SECRET = 'PLACE KEY HERE'
 
-twitter = Twython( CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET )
+twitter = Twython( config.CONSUMER_KEY, config.CONSUMER_SECRET, config.ACCESS_KEY, config.ACCESS_SECRET )
 
 
 def twitter_file():
