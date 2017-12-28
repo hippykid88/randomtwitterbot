@@ -5,14 +5,14 @@ from  twython import Twython
 
 twitter = Twython( config.CONSUMER_KEY, config.CONSUMER_SECRET, config.ACCESS_KEY, config.ACCESS_SECRET )
 
-
-def twitter_file():
-    random_tweet = random.choice(config.OPTION)
-    photo_open = open( random_tweet["media"], 'rb' )
+"""function will pick from a random predefined tweets and media to be tweeted out"""
+def build_a_tweet():
+    random_option = random.choice(config.OPTION)
+    photo_open = open( random_option["media"], 'rb' )
     response = twitter.upload_media( media=photo_open )
-    return random_tweet["tweet_text"], response
+    return random_option["tweet_text"], response
 
-tweet_text, response = twitter_file()
+tweet_text, response = build_a_tweet()
 
 
 """build text part of tweet"""
